@@ -54,4 +54,5 @@ colnames(Forms)[2:c(ncol(mat)+1)]<-colnames(mat)
 
 ### Export ###
 ##############
-write.table(Forms,file="CompTox_list-dupl_rem-ACI_MATRIX.txt", row.names=FALSE, sep="\t")
+write_csv(Forms, "Formulas_matrix.csv", na = "NA")
+
