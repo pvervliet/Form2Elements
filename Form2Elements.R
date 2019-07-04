@@ -4,7 +4,7 @@ library(tidyverse)
 
 ### Import Data ###
 ###################
-Forms <- read.table("Formulas.txt", sep="\t", header=T)
+Forms <- readxl::read_xlsx("Formulas.xlsx")
 
 ### Define function ###
 #######################
@@ -33,7 +33,7 @@ return(nums)
 ### Apply function on the column with molecular formulas ###
 ############################################################
 
-res<-lapply(as.character(Forms$MOLECULAR.FORMULA),function(x) mysplit(s=x))
+res<-lapply(as.character(Forms$MolFormula),function(x) mysplit(s=x))
 
 #Get all chemicals
 allchem<-unlist(lapply(res,function(x) names(x)))
